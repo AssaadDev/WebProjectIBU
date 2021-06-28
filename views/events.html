@@ -1,0 +1,200 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Events</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <body>
+        <!-- /.row -->
+        <label>Where do you want to go? </label>
+        <select  type="text" name="event" class="form-control" id="eventmj">
+            <option value="0">Choose a place</option>
+            <option value="1">IT Events</option>
+            <option value="2">Medicine Events</option>
+            <option value="3">Architecture Events</option>
+            <option value="4">Lawyers Events</option>
+        </select>
+
+        <br>
+
+        <input type="button" id="button" value="Select" onclick="getSelectValues();" />
+        <input type="reset" id="nazad" value="Return" onClick="window.location.reload(true)">
+
+        </div>
+
+        <br>
+
+
+        <div class="text-center">
+          <img src="img/netw.png" style="max-width:100%;" class="rounded float-left" alt="networking" id="myImg">
+        </div>
+
+
+        <div class="title">
+          <h2>Name of event</h2>
+        </div>
+        <p id="p1">Nothing is chosen now</p>
+
+
+        <div class="title">
+          <h2>Information and event hours</h2>
+        </div>
+        <p id="p2">Nothing is chosen now</p>
+
+
+        <div class="title">
+          <h2>Location</h2>
+        </div>
+
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open map</button>
+
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Location on the map</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+<div class="title">
+  <h2>Telephone</h2>
+</div>
+<p id="p4">Nothing is chosen now</p>
+
+
+
+<!-- Modal -->
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <h1 style="text-align: center;">Event in proggres</h1>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
+<script type="text/javascript">
+
+
+  document.getElementById("eventmj").selectedIndex = 0;
+
+  $("#nazad").hide();
+
+
+
+  function getSelectValues()
+            {
+
+
+                var x = document.getElementById("eventmj").value;
+
+
+                if (x==1){
+
+                  toastr.success("You have selected IT Events");
+
+                  document.getElementById("p1").innerHTML = "IT Events" ;
+                  document.getElementById("p2").innerHTML = "Every 21. in moth at 21:00 at hub387" ;
+                  document.getElementById("p4").innerHTML = "+38600000000" ;
+                  document.getElementById("p6").src = "img/it.jpg";
+
+                  $("#eventmj").hide();
+                  $("#button").hide();
+                  $("#nazad").show();
+
+
+                  }
+                else if (x==2){
+                    toastr.success("You have selected Medicine Events");
+                    document.getElementById("p1").innerHTML = "Medicine Events" ;
+                    document.getElementById("p2").innerHTML = "Every 9. in moth at 7:00 at UKC" ;
+                    document.getElementById("p4").innerHTML = "+38611111111" ;
+                    document.getElementById("p6").src = "img/doc.jpg";
+
+
+                    $("#eventmj").hide();
+                    $("#button").hide();
+                    $("#nazad").show();
+
+
+                    }
+              else if (x==3){
+                      toastr.success("You have selected Architecture Events");
+                      document.getElementById("p1").innerHTML = "Architecture Events" ;
+                      document.getElementById("p2").innerHTML = "Every 14. in moth at 17:00 at Grand Centar, 3th floor" ;
+                      document.getElementById("p4").innerHTML = "+386222222222" ;
+                      document.getElementById("p6").src = "img/arc.png";
+
+
+                      $("#eventmj").hide();
+                      $("#button").hide();
+                      $("#nazad").show();
+
+
+                      }
+              else if (x==4){
+                        toastr.success("You have selected Lawyers Events");
+                        document.getElementById("p1").innerHTML = "Lawyers Events" ;
+                        document.getElementById("p2").innerHTML = "Every 29. in moth at 12:00 at Opcinski Sud BIH" ;
+                        document.getElementById("p4").innerHTML = "+3863333333333" ;
+                        document.getElementById("p6").src = "img/law.jpg";
+
+
+                        $("#eventmj").hide();
+                        $("#button").hide();
+                        $("#nazad").show();
+
+                        }
+              else{
+                            toastr.success("Returned to dropdown menu");
+                            document.getElementById("myImg").src="img/pnd.jpg";
+                            document.getElementById("p1").innerHTML="Nothing is chosen now";
+                            document.getElementById("p2").innerHTML="Nothing is chosen now";
+                            document.getElementById("p4").innerHTML="Nothing is chosen now";
+                            document.getElementById("p6").src="img/ops.png";
+
+
+
+
+                          }
+
+                        }
+
+
+
+
+
+
+
+</script>
+</body>

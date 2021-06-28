@@ -1,0 +1,17 @@
+{
+    "name": "ibu/lmsarea",
+    "description": "LMS Area",
+    "license": "Apache2",
+    "authors": [
+        {
+            "name": "ahmedassaad",
+            "email": "ahmed.assaad@stu.ibu.edu.ba"
+        }
+    ],
+    "require": {
+        "mikecao/flight": "^1.3",
+        "zircote/swagger-php": "^3.1",
+        "swiftmailer/swiftmailer": "^6.2",
+        "firebase/php-jwt": "^5.2"
+    }
+}

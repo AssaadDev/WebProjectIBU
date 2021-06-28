@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Lms news</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="./assets/css/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="./assets/css/startmin.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="./assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body style="display:none; background-color: rgba(255, 166, 0, 0.37);">
+
+        <div class="container">
+
+          <div id="change-password-form-container" class="row hidden">
+              <div class="col-md-4 col-md-offset-4">
+
+                <div class="text-center">
+                  <img src="img/loginimg.jpg" style="max-width:10%;" class="rounded float-left" alt="Responsive image">
+                </div>
+
+                <div class="panel-heading">
+                    <h2 class="panel-title">Students and Professor area</h3>
+                </div>
+                  <div class="login-panel panel panel-default">
+                      <div class="panel-heading">
+                          <h3 class="panel-title">Change password</h3>
+                      </div>
+                      <div class="panel-body">
+                          <form role="form">
+                              <fieldset>
+
+                                <input id="change-password-token" name="token" type="hidden" value="">
+
+                                <div class="form-group">
+                                    <input id="change-password" class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+
+                                  <div class="form-group">
+
+                                  <!-- Change this to a button or input when using this as a form -->
+                                  <button id="change-link" onclick="Login.do_Change_Password()" class="btn btn-lg btn-success btn-block">Change Password</button>
+                                </div>
+
+
+                              </fieldset>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+          <div id="forgot-form-container" class="row hidden">
+              <div class="col-md-4 col-md-offset-4">
+                  <div class="login-panel panel panel-default">
+
+                    <div class="text-center">
+                      <img src="img/loginimg.jpg" style="max-width:100%;" class="rounded float-left" alt="Responsive image">
+                    </div>
+                      <div class="panel-heading" style="background-color: rgb(255, 1, 1);">
+                          <h3 class="panel-title" style="text-align: center; color: rgb(253, 253, 253);">Forgot password???</h3>
+                      </div>
+                      <div class="panel-body">
+                          <form role="form">
+                              <fieldset>
+                                  <div class="form-group">
+                                    <input id="forgot-email" class="form-control" placeholder="Email" name="Email" type="text" autofocus>
+                                  </div>
+
+                                  <div class="form-group">
+
+                                  <!-- Change this to a button or input when using this as a form -->
+                                  <button id="forgot-link" onclick="Login.do_Forgot_Password()" class="btn btn-lg btn-success btn-block">Send me my password</button>
+                                </div>
+
+                                  <div class="form-group pull-right">
+                                    <a href="#" onclick="Login.show_Login_Form()">Back to login</a>
+                                  </div>
+                              </fieldset>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+            <div id="login-form-container" class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+                      <div class="panel-heading" style="background-color: rgb(0, 0, 0);">
+                          <h2 class="panel-title" style="text-align: center; color: rgb(255, 255, 255);">Students and Professor area</h2>
+                      </div>
+                      <div class="text-center">
+                        <img src="img/loginimg.jpg" style="max-width:100%;" class="rounded float-left" alt="Responsive image">
+                      </div>
+                      
+                        <div class="panel-heading" style="background-color: rgb(0, 0, 0);">
+                            <h3 class="panel-title" style="text-align: center; color: rgb(255, 255, 255);"  >Please Sign In</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form id="login-form"role="form">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input id="email" class="form-control" placeholder="E-mail" name="email" type="Email" autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="password" class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    </div>
+                                    <div class="form-group">
+
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <button id="login-link" onclick="Login.do_Login()" class="btn btn-lg btn-success btn-block">Login</button>
+                                  </div>
+                                  <div class="form-group pull-left">
+                                    <a href="#" onclick="Login.show_Forgot_Form()">Forgot password</a>
+                                  </div>
+
+                                    <div class="form-group pull-right">
+                                      <a href="#" onclick="Login.show_Register_Form()">Register here</a>
+                                    </div>
+
+
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="form-alert" class="row hidden" style="margin-top:50px;">
+
+
+</div>
+        <div id="register-form-container" class="row hidden">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+
+                  <div class="panel-heading" style="background-color: lime;">
+                    <h3 class="panel-title" style="text-align: center;">Lets add you too!</h3>
+                </div>
+
+                  <div class="text-center">
+                    <img src="img/loginimg.jpg" style="max-width:100%;" class="rounded float-left" alt="Responsive image">
+                  </div>
+                  
+                    <div class="panel-heading" style="text-align: center; background-color: black; color: white;">
+                        <h3 class="panel-title">We need to know who you are?</h3>
+                        <small>Your personal information will be protected!!!</small>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <fieldset>
+
+                              <div class="form-group">
+                                  <input id="register-name" class="form-control" placeholder="Name and surname" name="Name" type="text" autofocus>
+                              </div>
+                              <div class="form-group">
+                                  <input id="register-email" class="form-control" placeholder="Email" name="Email" type="email" autofocus>
+                              </div>
+                                <div class="form-group">
+                                    <input id="register-dateofbirth" class="form-control" placeholder="Date of birth" name="DateOfBirth" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input id="register-phonenumber" class="form-control" placeholder="Phone Number" name="PhoneNumber" type="text" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input id="register-city" class="form-control" placeholder="City" name="City" type="text" value="">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input id="register-pw" class="form-control" placeholder="Password" name="cpw" type="password" value="">
+                                </div>
+                            
+                                <div>
+
+
+                                <div class="form-group">
+
+                                <!-- Change this to a button or input when using this as a form -->
+                                <button id="register-link" onclick="Login.do_Register()" class="btn btn-lg btn-success btn-block">Register</button>
+                              </div>
+                              <div class="form-group pull-right">
+                                <a href="#" onclick="Login.show_Login_Form()">Back to login</a>
+                              </div>
+
+
+
+
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- jQuery -->
+        <script src="./assets/js/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="./assets/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+        <script src="./assets/js/utils.js"></script>
+        <script src="./assets/js/restClient.js"></script>
+        <script src="./assets/js/controllers/login.js"></script>
+
+
+
+        <script type="text/javascript">
+
+Login.init();
+
+        </script>
+
+    </body>
+</html>
